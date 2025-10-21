@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa del Jack Russell Terrier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .timeline {
+            position: relative;
+            max-width: 36rem;
+            margin: 0 auto;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: #118AB2;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -14px;
+            background-color: white;
+            border: 4px solid #FFD166;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .timeline-container.right::after {
+            left: -12px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 18px;
+            }
+        }
+    </style>
+</head>
+<body class="text-[#073B4C]">
+
+    <header class="bg-[#118AB2] text-white text-center py-12 px-4">
+        <h1 class="text-4xl md:text-6xl font-black tracking-tight">Guía Completa del Jack Russell Terrier</h1>
+        <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto">Todo lo que necesitas saber sobre esta enérgica y leal raza.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+        
+        <section id="introduction" class="mb-12">
+            <div class="bg-white rounded-lg shadow-md p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="border-b-2 md:border-b-0 md:border-r-2 border-gray-100 pb-4 md:pb-0 md:pr-4">
+                    <h3 class="text-lg font-bold text-[#118AB2]">Esperanza de Vida</h3>
+                    <p class="text-4xl font-black text-[#EF476F]">13-16</p>
+                    <p class="text-gray-500">años</p>
+                </div>
+                <div class="border-b-2 md:border-b-0 md:border-r-2 border-gray-100 pb-4 md:pb-0 md:pr-4">
+                    <h3 class="text-lg font-bold text-[#118AB2]">Altura a la Cruz</h3>
+                    <p class="text-4xl font-black text-[#06D6A0]">25-30</p>
+                    <p class="text-gray-500">centímetros</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-[#118AB2]">Peso Ideal</h3>
+                    <p class="text-4xl font-black text-[#FFD166]">6-8</p>
+                    <p class="text-gray-500">kilogramos</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="types" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">No Todos Son Iguales: Tipos de Pelaje</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <span class="text-5xl" role="img" aria-label="perro">🐕</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-[#118AB2]">Pelo Liso</h3>
+                    <p>Corto, pegado al cuerpo y denso. Es el que menos mantenimiento de cepillado requiere, aunque mudan constantemente.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <span class="text-5xl" role="img" aria-label="perro">🐩</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-[#118AB2]">Pelo Duro</h3>
+                    <p>Largo, áspero y alambrado. Requiere "stripping" (extracción manual) dos veces al año para mantener su textura y salud.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <span class="text-5xl" role="img" aria-label="perro">🐶</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2 text-[#118AB2]">Pelo Mixto (Broken)</h3>
+                    <p>Una combinación de los dos anteriores. Tiene pelo liso en algunas zonas y pelos más largos y duros en otras, como el hocico y las cejas.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="temperament-care" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Un Torbellino de Energía y Personalidad</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#118AB2]">Perfil de Temperamento</h3>
+                    <div class="chart-container">
+                        <canvas id="temperamentChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-lg">El Jack Russell es famoso por su gran inteligencia y energía inagotable. Este gráfico de radar muestra sus rasgos dominantes: son extremadamente listos y enérgicos, lo que requiere un dueño activo. Su nivel de afecto es alto, pero su adiestrabilidad, aunque son inteligentes, puede ser un reto debido a su terquedad. Su convivencia con niños y otras mascotas requiere una socialización temprana.</p>
+                    <div class="bg-white rounded-lg shadow-md p-6 text-center">
+                        <h3 class="text-xl font-bold text-[#118AB2]">Necesidad de Ejercicio Diario</h3>
+                        <p class="text-5xl font-black text-[#EF476F] mt-2">60+</p>
+                        <p class="text-gray-500">Minutos de actividad intensa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grooming" class="mb-12">
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <div class="order-2 lg:order-1">
+                     <h3 class="text-2xl font-bold mb-4 text-[#118AB2]">Necesidades de Aseo por Pelaje</h3>
+                     <p class="text-lg">El cuidado del pelaje varía significativamente. Mientras que el Jack Russell de pelo liso es de bajo mantenimiento, el de pelo duro necesita cuidados profesionales para mantener la salud de su piel y pelo. El pelaje mixto se encuentra en un punto intermedio, necesitando cepillado regular y "stripping" ocasional en las zonas de pelo duro.</p>
+                </div>
+                 <div class="bg-white rounded-lg shadow-md p-6 order-1 lg:order-2">
+                    <h3 class="text-xl font-bold text-center mb-4 text-[#118AB2]">Comparativa de Mantenimiento</h3>
+                    <div class="chart-container h-64 md:h-80">
+                         <canvas id="groomingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="health" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Un Comienzo Saludable: Vacunas y Desarrollo</h2>
+            <p class="text-center max-w-3xl mx-auto mb-10">El calendario de vacunación es crucial para proteger a tu cachorro de enfermedades graves. Esta es una guía general; consulta siempre a tu veterinario para un plan personalizado.</p>
+            <div class="timeline">
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-bold text-[#118AB2]">6-8 Semanas</h3>
+                        <p>Primera dosis de la vacuna polivalente (Parvovirus, Moquillo, Hepatitis, Leptospirosis) y desparasitación interna.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-bold text-[#118AB2]">9-11 Semanas</h3>
+                        <p>Segundo refuerzo de la vacuna polivalente. Es un buen momento para empezar la socialización en entornos controlados.</p>
+                    </div>
+                </div>
+                <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-bold text-[#118AB2]">12-14 Semanas</h3>
+                        <p>Tercer refuerzo de la polivalente. La inmunidad se consolida.</p>
+                    </div>
+                </div>
+                <div class="timeline-container right">
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-bold text-[#118AB2]">A partir de 3 Meses</h3>
+                        <p>Vacuna contra la Rabia (obligatoria en muchas regiones). Microchip.</p>
+                    </div>
+                </div>
+                 <div class="timeline-container left">
+                    <div class="timeline-content">
+                        <h3 class="text-lg font-bold text-[#118AB2]">Anualmente</h3>
+                        <p>Refuerzo de la Polivalente y la Rabia. Chequeo general de salud.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="breeders" class="mb-12">
+            <h2 class="text-3xl font-bold text-center mb-8">Encontrando a Tu Amigo: Criadores Fiables</h2>
+            <p class="text-center max-w-3xl mx-auto mb-10">La elección del criador es la decisión más importante. Un criador responsable garantiza cachorros sanos, bien socializados y con buen temperamento.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-8 border-[#06D6A0]">
+                    <h3 class="text-2xl font-bold mb-4 text-[#073B4C]">Criador Responsable ✔️</h3>
+                    <ul class="space-y-3 list-inside">
+                        <li><span class="font-bold text-[#06D6A0]">✓</span> Te hace muchas preguntas sobre tu estilo de vida.</li>
+                        <li><span class="font-bold text-[#06D6A0]">✓</span> Te permite conocer a los padres del cachorro.</li>
+                        <li><span class="font-bold text-[#06D6A0]">✓</span> Mantiene a los cachorros limpios y en un entorno estimulante.</li>
+                        <li><span class="font-bold text-[#06D6A0]">✓</span> Proporciona pruebas de salud de los padres (genéticas, de articulaciones).</li>
+                        <li><span class="font-bold text-[#06D6A0]">✓</span> Ofrece un contrato y garantía de salud.</li>
+                        <li><span class="font-bold text-[#06D6A0]">✓</span> Socializa a los cachorros desde una edad temprana.</li>
+                        <li><span class="font-bold text-[#06D6A0]">✓</span> Tiene una o pocas razas y pocas camadas al año.</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6 border-l-8 border-[#EF476F]">
+                    <h3 class="text-2xl font-bold mb-4 text-[#073B4C]">Señales de Alerta ❌</h3>
+                     <ul class="space-y-3 list-inside">
+                        <li><span class="font-bold text-[#EF476F]">✗</span> Vende cachorros en tiendas de mascotas o por internet sin control.</li>
+                        <li><span class="font-bold text-[#EF476F]">✗</span> No te deja ver dónde viven los cachorros y la madre.</li>
+                        <li><span class="font-bold text-[#EF476F]">✗</span> Tiene cachorros disponibles todo el año de varias razas.</li>
+                        <li><span class="font-bold text-[#EF476F]">✗</span> No puede proporcionar documentos de salud o pedigrí.</li>
+                        <li><span class="font-bold text-[#EF476F]">✗</span> Entrega cachorros antes de las 8 semanas de edad.</li>
+                        <li><span class="font-bold text-[#EF476F]">✗</span> Presiona para una venta rápida.</li>
+                        <li><span class="font-bold text-[#EF476F]">✗</span> Las instalaciones están sucias o los animales parecen temerosos.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#073B4C] text-white text-center py-6 px-4 mt-12">
+        <p>&copy; 2025 Guía Canina. Creado con fines informativos.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const wrapLabel = (label) => {
+                if (label.length <= 16) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + ' ' + word).trim().length > 16) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                });
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                  return label.join(' ');
+                } else {
+                  return label;
+                }
+            };
+            
+            const temperamentCtx = document.getElementById('temperamentChart');
+            if(temperamentCtx) {
+                new Chart(temperamentCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Inteligencia', 'Energía', 'Afecto', 'Adiestrabilidad', ['Convivencia con', 'Niños y Mascotas']],
+                        datasets: [{
+                            label: 'Nivel del Rasgo',
+                            data: [9, 10, 7, 6, 5],
+                            fill: true,
+                            backgroundColor: 'rgba(255, 209, 102, 0.4)',
+                            borderColor: '#FFD166',
+                            pointBackgroundColor: '#FFD166',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: '#FFD166'
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        elements: {
+                            line: {
+                                borderWidth: 3
+                            }
+                        },
+                        scales: {
+                            r: {
+                                angleLines: {
+                                    color: '#e2e8f0'
+                                },
+                                grid: {
+                                    color: '#e2e8f0'
+                                },
+                                pointLabels: {
+                                    font: {
+                                        size: 13
+                                    },
+                                    color: '#073B4C'
+                                },
+                                suggestedMin: 0,
+                                suggestedMax: 10,
+                                ticks: {
+                                    stepSize: 2,
+                                    backdropColor: 'rgba(255, 255, 255, 0.75)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            const groomingCtx = document.getElementById('groomingChart');
+            if(groomingCtx) {
+                 new Chart(groomingCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Pelo Liso', 'Pelo Mixto', 'Pelo Duro'],
+                        datasets: [{
+                            label: 'Nivel de Mantenimiento',
+                            data: [3, 6, 9],
+                            backgroundColor: [
+                                '#06D6A0',
+                                '#FFD166',
+                                '#EF476F'
+                            ],
+                            borderColor: [
+                               '#06D6A0',
+                               '#FFD166',
+                               '#EF476F'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        maintainAspectRatio: false,
+                        scales: {
+                           x: {
+                                beginAtZero: true,
+                                max: 10,
+                                grid: {
+                                   display: false
+                                },
+                                ticks: {
+                                    callback: function(value, index, values) {
+                                        if (value === 0) return 'Bajo';
+                                        if (value === 5) return 'Medio';
+                                        if (value === 10) return 'Alto';
+                                        return '';
+                                    }
+                                }
+                           }
+                        },
+                        plugins: {
+                             legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
